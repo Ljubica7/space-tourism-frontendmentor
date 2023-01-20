@@ -6,7 +6,6 @@ import closeMenu from "../assets/shared/icon-close.svg";
 
 export const Header = () => {
   const [openMenu, setOpenMenu] = useState(false);
-  console.log(openMenu);
 
   return (
     <header className="header">
