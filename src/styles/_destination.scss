@@ -1,0 +1,126 @@
+.destination {
+  height: 100%;
+  width: 100%;
+  background-image: url("../assets/destination/background-destination-desktop.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+
+  padding-block: 14rem 8.18rem;
+  padding-inline: 10.3rem;
+
+  @include for-tabletS {
+    min-height: 100vh;
+    height: auto;
+    overflow-y: auto;
+    background-image: url("../assets/destination/background-destination-tablet.jpg");
+    padding-inline: 6rem;
+    padding-block: 10rem 5rem;
+  }
+  @include for-phoneL {
+    background-image: url("../assets/destination/background-destination-mobile.jpg");
+  }
+
+  h2 {
+    @extend %heading-5;
+    text-transform: uppercase;
+    span {
+      font-weight: 700;
+      opacity: 0.25;
+      padding-right: 25px;
+    }
+    @include for-tabletS {
+      padding-bottom: 4rem;
+    }
+    @include for-phoneL {
+      padding-block: 5rem;
+    }
+  }
+
+  .destination-container {
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24.1rem;
+    @include for-tabletS {
+      flex-direction: column;
+      align-items: center;
+      gap: 5rem;
+    }
+
+    .destination-image {
+      height: 28rem;
+      width: 28rem;
+      aspect-ratio: 1;
+    }
+
+    .destination-content {
+      .tabs-nav {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        margin-bottom: 2.31rem;
+        gap: 2.25rem;
+        @include for-tabletS {
+          justify-content: center;
+        }
+
+        button {
+          text-transform: uppercase;
+          cursor: pointer;
+          transition: 0.3s;
+          @extend %paragraph-3;
+          color: $accent-100;
+          background-color: transparent;
+          border: none;
+          border-bottom: 3px solid transparent;
+          padding-bottom: 12px;
+          line-height: 1;
+        }
+        .active-tab {
+          color: $neutral-100;
+          border-bottom: 3px solid $neutral-100;
+        }
+      }
+
+      .content-block {
+        h1 {
+          @extend %heading-2;
+          padding-bottom: 12px;
+          text-transform: uppercase;
+        }
+        p {
+          @extend %paragraph-3;
+          color: $accent-100;
+        }
+        .stats-block {
+          border-top: 1px solid $primary-200;
+          margin-top: 3.38rem;
+          padding-top: 1.75rem;
+          display: flex;
+          gap: 4.94rem;
+          @include for-tabletS {
+            justify-content: center;
+          }
+          @include for-phoneL {
+            flex-direction: column;
+            justify-content: center;
+          }
+          p {
+            @extend %paragraph-1;
+            font-size: 28px;
+            text-transform: uppercase;
+          }
+          span {
+            display: block;
+            @extend %paragraph-2;
+            color: $accent-100;
+            padding-bottom: 12px;
+          }
+        }
+      }
+    }
+  }
+}

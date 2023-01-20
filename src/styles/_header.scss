@@ -1,0 +1,147 @@
+.header {
+  position: absolute;
+  z-index: 1;
+  top: 2.5rem;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-left: 3.4rem;
+  @include for-tabletS {
+    top: 0;
+    padding-left: 39px;
+    gap: 2.9rem;
+  }
+  @include for-phoneL {
+    top: 24px;
+    padding-left: 24px;
+  }
+
+  .logo-img {
+    height: 48px;
+    width: 48px;
+    aspect-ratio: 1;
+    @include for-phoneL {
+      height: 40px;
+      width: 40px;
+    }
+  }
+
+  .burger-menu {
+    display: none;
+    @include for-phoneL {
+      padding-right: 24px;
+      display: flex;
+      border: none;
+      background: transparent;
+      line-height: 1;
+      align-items: center;
+      cursor: pointer;
+    }
+  }
+  .close-icon {
+    display: none;
+    @include for-phoneL {
+      position: absolute;
+      top: 0;
+      right: 24px;
+      display: flex;
+      border: none;
+      background: transparent;
+      line-height: 1;
+      align-items: center;
+      cursor: pointer;
+      z-index: 5;
+    }
+  }
+
+  .display-none {
+    display: none;
+  }
+
+  .navigation {
+    position: relative;
+    background: $neutral-200-a;
+    backdrop-filter: blur(40.7742px);
+    margin: 0;
+    height: 96px;
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    padding-inline: 7.6rem 10.3rem;
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: 95%;
+      top: 50%;
+      width: 55rem;
+      border-bottom: 1px solid $neutral-100;
+      opacity: 0.25;
+      @include for-desktop {
+        width: 50rem;
+      }
+      @include for-laptopL {
+        width: 45rem;
+      }
+      @include for-laptopS {
+        width: 35rem;
+      }
+      @include for-laptop {
+        display: none;
+      }
+    }
+    @include for-tabletS {
+      padding-inline: 3rem 2.8rem;
+      gap: 36px;
+    }
+    @include for-phoneL {
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100vh;
+      width: 70vw;
+      transition: 0.5s;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-top: 10rem;
+      transform: translateX(100%);
+    }
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      @extend %paragraph-3;
+      text-transform: uppercase;
+      border-bottom: 3px solid transparent;
+      border-top: 3px solid transparent;
+      transition: 0.3s;
+      span {
+        padding-right: 11px;
+        font-weight: 700;
+      }
+      &:hover {
+        border-bottom: 3px solid $neutral-300-a;
+      }
+
+      @include for-phoneL {
+        height: fit-content;
+      }
+    }
+
+    .active {
+      border-bottom: 3px solid $neutral-100;
+      &:hover {
+        border-bottom: 3px solid $neutral-100;
+      }
+    }
+  }
+
+  .active-menu-nav {
+    @include for-phoneL {
+      transform: translateX(0%);
+    }
+  }
+}

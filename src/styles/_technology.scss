@@ -1,0 +1,149 @@
+.technology {
+  height: 100%;
+  width: 100%;
+
+  background-image: url("../assets/technology/background-technology-desktop.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-inline: 10.3rem 0;
+
+  @include for-tabletS {
+    padding-inline: 0;
+    align-items: center;
+    padding-block: 10rem;
+    height: auto;
+    min-height: 100vh;
+    overflow-y: auto;
+    background-image: url("../assets/technology/background-technology-tablet.jpg");
+  }
+  @include for-tabletS {
+    background-image: url("../assets/technology/background-technology-mobile.jpg");
+  }
+
+  h2 {
+    text-transform: uppercase;
+    @extend %heading-5;
+    span {
+      font-weight: 700;
+      opacity: 0.25;
+      padding-right: 25px;
+    }
+    @include for-tabletS {
+      padding-bottom: 4rem;
+    }
+  }
+
+  .swiper-technology {
+    width: 100%;
+    height: 80vh;
+    z-index: 0;
+    @include for-tabletS {
+      height: 80vh;
+    }
+    .swiper-slide {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 7.81rem;
+      @include for-tabletS {
+        flex-direction: column-reverse;
+        align-items: center;
+      }
+
+      .technology-content {
+        padding-left: 10rem;
+        @include for-tabletS {
+          text-align: center;
+          padding-left: 0;
+        }
+        @include for-phoneL {
+          padding-inline: 24px;
+        }
+        h3 {
+          @extend %paragraph-3;
+          text-transform: uppercase;
+          color: $accent-100;
+        }
+        h1 {
+          text-transform: uppercase;
+          @extend %heading-3;
+          padding-block: 12px 27px;
+        }
+        p {
+          @extend %paragraph-3;
+          color: $accent-100;
+          max-width: 28em;
+        }
+      }
+
+      .technology-image {
+        height: 32.94rem;
+        width: 32.19rem;
+        @include for-tabletS {
+          display: none;
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+      .responsive-img {
+        display: none;
+        @include for-tabletS {
+          display: block;
+          height: 20rem;
+        }
+      }
+    }
+  }
+  .swiper-pagination-vertical.swiper-pagination-bullets,
+  .swiper-vertical > .swiper-pagination-bullets {
+    left: 0;
+    @include for-tabletS {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      gap: 3rem;
+      // top: 50%;
+    }
+    @include for-phoneL {
+      top: 30%;
+    }
+  }
+
+  .swiper-pagination-bullet {
+    width: 80px;
+    height: 80px;
+    aspect-ratio: 1;
+    text-align: center;
+    @extend %heading-4;
+    opacity: 1;
+    line-height: 80px;
+    background: transparent;
+    border: 1px solid $neutral-100;
+    @include for-tabletS {
+      width: 58px;
+      height: 58px;
+      line-height: 58px;
+      aspect-ratio: 1;
+      font-size: 24px;
+    }
+    @include for-phoneL {
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      font-size: 16px;
+    }
+  }
+
+  .swiper-pagination-bullet-active {
+    color: $primary-100;
+    background: $neutral-100;
+  }
+
+  .swiper-pagination-bullet {
+    margin-block: 2rem;
+  }
+}

@@ -1,0 +1,118 @@
+.crew {
+  height: 100%;
+  width: 100%;
+  background-image: url("../assets/crew/background-crew-desktop.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-inline: 10.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  @include for-tabletS {
+    min-height: 100vh;
+    height: auto;
+    overflow-y: auto;
+    background-image: url("../assets/crew/background-crew-tablet.jpg");
+    padding-inline: 5rem;
+    padding-top: 10rem;
+  }
+  @include for-phoneL {
+    background-image: url("../assets/crew/background-crew-mobile.jpg");
+    text-align: center;
+  }
+
+  h2 {
+    @extend %heading-5;
+    padding-top: 14rem;
+    text-transform: uppercase;
+    span {
+      font-weight: 700;
+      opacity: 0.25;
+      padding-right: 25px;
+    }
+    @include for-tabletS {
+      padding-bottom: 4rem;
+      padding-top: 0;
+    }
+  }
+
+  .swiper-crew {
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    .swiper-slide {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+
+      @include for-tabletS {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: -4rem;
+        gap: 6rem;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      .crew-content {
+        padding-bottom: 12rem;
+        @include for-tabletS {
+          text-align: center;
+        }
+        h3 {
+          @extend %heading-4;
+          opacity: 0.5;
+          text-transform: uppercase;
+        }
+        h1 {
+          text-transform: uppercase;
+          @extend %heading-3;
+          padding-block: 12px 27px;
+        }
+        p {
+          @extend %paragraph-3;
+          color: $accent-100;
+          max-width: 28em;
+        }
+      }
+
+      .crew-image {
+        height: 44.5rem;
+        width: 35.5rem;
+        img {
+          width: 100%;
+          height: 100%;
+          object-position: bottom;
+          object-fit: contain;
+        }
+
+        @include for-tabletS {
+          width: 100%;
+          height: 34.5rem;
+        }
+      }
+    }
+  }
+
+  .swiper-horizontal > .swiper-pagination-bullets,
+  .swiper-pagination-bullets.swiper-pagination-horizontal {
+    width: fit-content;
+    bottom: 2rem;
+    height: 15px;
+    @include for-tabletS {
+      top: 35%;
+      width: 100%;
+    }
+    @include for-phoneL {
+      top: 55%;
+    }
+  }
+  .swiper-pagination-bullet {
+    height: 15px;
+    width: 15px;
+    aspect-ratio: 1;
+    background: $neutral-100;
+  }
+}
