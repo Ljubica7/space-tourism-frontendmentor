@@ -42,7 +42,7 @@
     height: 80vh;
     z-index: 0;
     @include for-tabletS {
-      height: 80vh;
+      height: 100vh;
     }
     .swiper-slide {
       display: flex;
@@ -93,7 +93,12 @@
         display: none;
         @include for-tabletS {
           display: block;
-          height: 20rem;
+          height: 400px;
+          width: 100%;
+          img {
+            width: 100%;
+            object-fit: cover;
+          }
         }
       }
     }

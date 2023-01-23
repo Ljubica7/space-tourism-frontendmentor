@@ -35,6 +35,7 @@ export const Header = () => {
           className={({ isActive }) =>
             isActive ? "nav-link active" : "nav-link"
           }
+          onClick={() => setOpenMenu(false)}
         >
           <span>00</span>
           Home
@@ -44,6 +45,7 @@ export const Header = () => {
           className={({ isActive }) =>
             isActive ? "nav-link active" : "nav-link"
           }
+          onClick={() => setOpenMenu(false)}
         >
           <span>01</span>
           Destination
@@ -53,6 +55,7 @@ export const Header = () => {
           className={({ isActive }) =>
             isActive ? "nav-link active" : "nav-link"
           }
+          onClick={() => setOpenMenu(false)}
         >
           <span>02</span>
           Crew
@@ -62,6 +65,7 @@ export const Header = () => {
           className={({ isActive }) =>
             isActive ? "nav-link active" : "nav-link"
           }
+          onClick={() => setOpenMenu(false)}
         >
           <span>03</span>
           Technology
